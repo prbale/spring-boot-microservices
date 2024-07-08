@@ -56,7 +56,7 @@ For example:
 - Creating a User:
 
 ```
-curl -X POST http://localhost:8080/users -d '{"username":"john_doe","email":"john.doe@example.com"}' -H "Content-Type: application/json"
+curl -X POST http://localhost:8080/users -d '{"name":"john_doe","email":"john.doe@example.com"}' -H "Content-Type: application/json"
 ```
 
 - Placing an Order:
