@@ -1,6 +1,7 @@
 # Spring Boot Microservices Example
 
 This repository contains a sample project demonstrating the implementation of microservices architecture using Spring Boot.
+
 [Refer blog on Microservices here](https://prashbale.hashnode.dev/kickstart-your-journey-building-your-first-microservice-with-spring-boot).
 
 ## Overview
