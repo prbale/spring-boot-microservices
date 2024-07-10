@@ -1,8 +1,10 @@
-package com.example.userservice.model;
+package com.example.userservice.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 public class Users {
 
     @Id
