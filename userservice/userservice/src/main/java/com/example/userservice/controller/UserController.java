@@ -16,8 +16,11 @@ import java.util.List;
 @Validated
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping
     public List<Users> getAllUsers() {
@@ -26,11 +29,13 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.getUserById(id));
+        UserDTO userDTO = userService.getUserById(id);
+        return ResponseEntity.ok(userDTO);
     }
 
     @PostMapping
     public ResponseEntity<UserDTO>  createUser(@Valid @RequestBody UserDTO userDTO) {
-        return ResponseEntity.ok(userService.saveUser(userDTO));
+        UserDTO savedUser = userService.saveUser(userDTO);
+        return ResponseEntity.ok(savedUser);
     }
 }
