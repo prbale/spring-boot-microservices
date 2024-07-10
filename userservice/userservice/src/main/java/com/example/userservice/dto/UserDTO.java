@@ -2,9 +2,9 @@ package com.example.userservice.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
+import lombok.Value;
 
-@Data
+@Value
 public class UserDTO {
 
     private Long id;
@@ -15,4 +15,11 @@ public class UserDTO {
     @Email(message = "Email should be valid")
     @NotBlank(message = "Email is mandatory")
     private String email;
+
+    // Constructor with all fields
+    public UserDTO(Long id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
 }
