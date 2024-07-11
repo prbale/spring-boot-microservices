@@ -3,7 +3,6 @@ package com.example.userservice.controller;
 import com.example.userservice.dto.UserDTO;
 import com.example.userservice.entity.Users;
 import com.example.userservice.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
