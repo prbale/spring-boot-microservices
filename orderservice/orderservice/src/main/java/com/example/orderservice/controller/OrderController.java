@@ -1,8 +1,10 @@
 package com.example.orderservice.controller;
 
-import com.example.orderservice.model.Order;
+import com.example.orderservice.dto.OrderDTO;
+import com.example.orderservice.entity.Order;
 import com.example.orderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,12 +17,15 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping("/user/{userId}")
-    public List<Order> getOrdersByUserId(@PathVariable Long userId) {
-        return orderService.getOrdersByUserId(userId);
+    public ResponseEntity<List<OrderDTO>> getOrdersByUserId(@PathVariable Long userId) {
+
+        List<OrderDTO> orderDTOList = orderService.getOrdersByUserId(userId);
+        return ResponseEntity.ok(orderDTOList);
     }
 
     @PostMapping
-    public Order createOrder(@RequestBody Order order) {
-        return orderService.saveOrder(order);
+    public ResponseEntity<OrderDTO>  createOrder(@RequestBody OrderDTO orderDTO) {
+        OrderDTO savedOrder =  orderService.saveOrder(orderDTO);
+        return ResponseEntity.ok(savedOrder);
     }
 }
