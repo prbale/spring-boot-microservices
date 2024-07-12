@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class AdminUserImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Users> getAllUsers() {
-        System.out.println("----> Normal User - Calling getAllUsers() ");
+        System.out.println("----> Admin User - Calling getAllUsers() ");
         return userRepository.findAll();
     }
 
