@@ -1,19 +1,18 @@
 package com.example.userservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Entity
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+@Builder
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Users {
 
     @Id
@@ -23,4 +22,7 @@ public class Users {
     private String name;
 
     private String email;
+
+    @Transient
+    private List<Order> orders = new ArrayList<>();
 }
