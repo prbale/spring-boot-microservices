@@ -3,6 +3,7 @@ package com.example.userservice.dto;
 import com.example.userservice.entity.Order;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
 import lombok.Value;
 
 import java.util.ArrayList;
@@ -28,5 +29,9 @@ public class UserDTO {
         this.name = name;
         this.email = email;
         this.orders = orders;
+    }
+
+    public String getName() {
+        return name;
     }
 }
